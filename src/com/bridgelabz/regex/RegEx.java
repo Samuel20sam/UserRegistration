@@ -23,25 +23,35 @@ public class RegEx {
         String pattern = "^(91)\\d{10}$";
         return mobile.matches(pattern);
     }
+    public boolean password(String password) {
+        String pattern  = "^[a-zA-Z0-9]{8,}$";
+        return password.matches(pattern);
+    }
     public static void main(String[] args)
     {
         RegEx regex = new RegEx();
         Scanner scan = new Scanner(System.in);
 
-//        System.out.println("Enter the first name :");
+        System.out.println("Enter the first name:");
 //        String firstName = scan.nextLine();
-//        System.out.println(regex.firstName(firstName));
-//
-//        System.out.println("Enter the last name :");
+        System.out.println(regex.firstName("Samuel"));
+
+        System.out.println("Enter the last name:");
 //        String lastName = scan.nextLine();
-//        System.out.println(regex.lastName(lastName));
-//
-//        System.out.println("Enter the email address:");
+        System.out.println(regex.lastName("Elijah"));
+
+        System.out.println("Enter the email address:");
 //        String email = scan.nextLine();
-//        System.out.println(regex.email(email));
+        System.out.println(regex.email("abc.sam@bl.co.in"));
 
         System.out.println("Enter the mobile number:");
-        String mobile = scan.nextLine();
-        System.out.println(regex.mobile(mobile));
+//        String mobile = scan.nextLine();
+        System.out.println(regex.mobile("919600020569"));
+
+        System.out.println("Enter the password :");
+        String password = scan.nextLine();
+        System.out.println(regex.password(password));
     }
+
+    
 }
