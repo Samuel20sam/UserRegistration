@@ -1,7 +1,5 @@
 package com.bridgelabz.regex;
 
-import java.util.Scanner;
-
 public class RegEx {
     public boolean firstName(String name)
     {
@@ -25,13 +23,14 @@ public class RegEx {
     }
     public boolean password(String password) {
         //String pattern  = "^[a-zA-Z0-9]{8,}$"; // rule 1
-        String pattern  = "^[A-Z]+[a-z\\d]{7,}$"; // rule 2
+        //String pattern  = "^[A-Z]+[a-z\\d]{7,}$"; // rule 2
+        String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"; // rule 3
         return password.matches(pattern);
     }
     public static void main(String[] args)
     {
         RegEx regex = new RegEx();
-        Scanner scan = new Scanner(System.in);
+//        Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter the first name:");
 //        String firstName = scan.nextLine();
@@ -51,6 +50,6 @@ public class RegEx {
 
         System.out.println("Enter the password:");
 //        String password = scan.nextLine();
-        System.out.println(regex.password("Password"));
+        System.out.println(regex.password("paSs10word"));
     }
 }
