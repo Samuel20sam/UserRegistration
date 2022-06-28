@@ -24,7 +24,8 @@ public class RegEx {
         return mobile.matches(pattern);
     }
     public boolean password(String password) {
-        String pattern  = "^[a-zA-Z0-9]{8,}$";
+        //String pattern  = "^[a-zA-Z0-9]{8,}$"; // rule 1
+        String pattern  = "^[A-Z]+[a-z\\d]{7,}$"; // rule 2
         return password.matches(pattern);
     }
     public static void main(String[] args)
@@ -48,10 +49,8 @@ public class RegEx {
 //        String mobile = scan.nextLine();
         System.out.println(regex.mobile("919600020569"));
 
-        System.out.println("Enter the password :");
-        String password = scan.nextLine();
-        System.out.println(regex.password(password));
+        System.out.println("Enter the password:");
+//        String password = scan.nextLine();
+        System.out.println(regex.password("Password"));
     }
-
-    
 }
