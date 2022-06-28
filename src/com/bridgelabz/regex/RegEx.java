@@ -13,8 +13,8 @@ public class RegEx {
     }
     public boolean email(String email)
     {
-        String pattern  = "^(abc)[.][A-Za-z]*@(bl.co)[.a-z]*$";
-//        String pattern  = "^[A-Za-z0-9+_.-]*+@(.+)$";
+        //String pattern  = "^(abc)[.][A-Za-z]*@(bl.co)[.a-z]*$";
+        String pattern  = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
         return email.matches(pattern);
     }
     public boolean mobile(String mobile) {
@@ -41,9 +41,9 @@ public class RegEx {
 //        String lastName = scan.nextLine();
         System.out.println(regex.lastName("Elijah"));
 
-        System.out.println("Enter the email address:");
+//        System.out.println("Enter the email address:");
 //        String email = scan.nextLine();
-        System.out.println(regex.email("abc.sam@bl.co.in"));
+//        System.out.println(regex.email("abc.sam@bl.co.in"));
 
         System.out.println("Enter the mobile number:");
 //        String mobile = scan.nextLine();
@@ -52,5 +52,20 @@ public class RegEx {
         System.out.println("Enter the password:");
 //        String password = scan.nextLine();
         System.out.println(regex.password("paSs10wo@$^_rd"));
+
+        System.out.println("Enter the email address:");
+//        String email = scan.nextLine();
+        System.out.println(regex.email("abc@yahoo.com"));
+        System.out.println(regex.email("aabc-100@yahoo.com"));
+        System.out.println(regex.email("abc.100@yahoo.com"));
+        System.out.println(regex.email("abc111@abc.com"));
+        System.out.println(regex.email("abc-100@abc.net"));
+        System.out.println(regex.email("abc.100@abc.com.au"));
+        System.out.println(regex.email("abc@1.com"));
+        System.out.println(regex.email("abc@gmail.com.com"));
+        System.out.println(regex.email("abc+100@gmail.com"));
+        System.out.println(regex.email("abc123@.com"));
+        System.out.println(regex.email(".abc@abc.com"));
+        System.out.println(regex.email("abc@%*.com"));
     }
 }
