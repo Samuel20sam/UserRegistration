@@ -22,9 +22,10 @@ public class RegEx {
         return mobile.matches(pattern);
     }
     public boolean password(String password) {
-        //String pattern  = "^[a-zA-Z0-9]{8,}$"; // rule 1
-        //String pattern  = "^[A-Z]+[a-z\\d]{7,}$"; // rule 2
-        String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"; // rule 3
+        //String pattern  = "^[a-zA-Z0-9]{8,}$"; // rule 1 -> 8 char
+        //String pattern  = "^[(?=.*[a-z])(?=.*[A-Z]).{8,}$"; // rule 2 -> 1 Upper case
+        //String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"; // rule 3 -> 1 number
+        String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}"; // rule 4 -> 1 Special Char
         return password.matches(pattern);
     }
     public static void main(String[] args)
@@ -50,6 +51,6 @@ public class RegEx {
 
         System.out.println("Enter the password:");
 //        String password = scan.nextLine();
-        System.out.println(regex.password("paSs10word"));
+        System.out.println(regex.password("paSs10wo@$^_rd"));
     }
 }
